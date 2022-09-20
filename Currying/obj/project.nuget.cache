@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hsVQysfpVOX+Ghv3mpHLR3JvDia1dG76m2x5AuMCZGyMhHhNOkuul0NOvgrm1SINioYB8ClslUpgMNPSJDh7+w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kevin\\Documents\\GitHub\\fsharp_practice\\Currying\\Currying.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\fsharp.core\\6.0.5\\fsharp.core.6.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
