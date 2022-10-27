@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FZydHPu7fAeCgBWTM97s5xeKQNyvKysmHxkdYmi3XDjPhJPg+AJf0+Wgb7XM9vWVKdEbfdjoU4q3Rd1cGloeDw==",
+  "dgSpecHash": "Y6D9LSjAFeLQMEHX2Mi2fd8YcZRTgq/jlht8KLZJeZy70c+NUmI+AEtZOHlBeSsMq0oK/ravA6j4eDdlYcYyxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kevin\\Documents\\GitHub\\fsharp_practice\\kbricks\\kbricks.fsproj",
+  "projectFilePath": "C:\\Users\\kevin\\OneDrive\\Documents\\GitHub\\fsharp_practice\\kbricks\\kbricks.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\kevin\\.nuget\\packages\\fsharp.core\\6.0.6\\fsharp.core.6.0.6.nupkg.sha512"
   ],

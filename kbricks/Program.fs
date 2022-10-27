@@ -32,11 +32,10 @@ let main argv =
         |> Array.map (fun (sc, sr, cc) -> { StudColumns = sc; StudRows = sr; Color = cc })
 
     
-    //Brick.printEachBrick bricks
+    Brick.printEachBrick bricks
     //Brick.sumOfStuds bricks
     // Brick.countBricks bricks
     //Brick.getColorBrick bricks ConsoleColor.Yellow
-    Brick.groupBricksByStud bricks
+    //Brick.groupBricksByStud bricks
     //Brick.groupBricksByColor bricks
-    
     0
