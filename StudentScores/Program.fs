@@ -13,16 +13,17 @@ let main argv =
     //printfn $"Sum of consoles: {Gaming.totalSum}" 
     
     //play a game first! wahoo
-    //GuessGame.guessGame
+    GuessGame.guessGame
 
     if argv.Length > 0 then 
         
         let filePath = argv.[0] 
+        let schoolCodesFilePath = argv.[1] 
 
         if File.Exists filePath then 
             printf "Processing %s\n" filePath
             try
-                Summary.summarize filePath
+                Summary.summarize filePath schoolCodesFilePath
                 0
             with 
                 | :? FormatException as e -> 

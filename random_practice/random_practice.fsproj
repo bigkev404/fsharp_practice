@@ -6,7 +6,10 @@
   <ItemGroup>
     <Compile Include="guessgame.fs" />
     <Compile Include="matching.fs" />
+    <Compile Include="disctionaries.fs" />
     <Compile Include="gaming.fs" />
+    <Compile Include="arraying.fs" />
+    <Compile Include="sequencing.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>

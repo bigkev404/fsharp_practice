@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FZydHPu7fAeCgBWTM97s5xeKQNyvKysmHxkdYmi3XDjPhJPg+AJf0+Wgb7XM9vWVKdEbfdjoU4q3Rd1cGloeDw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kevin\\Documents\\GitHub\\fsharp_practice\\kbricks\\kbricks.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\fsharp.core\\6.0.6\\fsharp.core.6.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}
