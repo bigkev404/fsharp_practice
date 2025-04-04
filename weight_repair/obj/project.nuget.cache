@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JyS41CFAi00=",
+  "success": true,
+  "projectFilePath": "C:\\GitHub\\fsharp_practice\\weight_repair\\weight_repair.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\fsharp.core\\8.0.403\\fsharp.core.8.0.403.nupkg.sha512"
+  ],
+  "logs": []
+}
