@@ -77,6 +77,25 @@ type shipments =
 
     }
 
+type ComparedShipments = 
+    {
+        ShipKey: string //1
+        Customer: string //9
+        City: string //13
+        State: string //14
+        Country: string //
+        ShipToLat: float //17
+        ShipToLong: float //18
+        Distance: float  //19
+        ItemNumber: string //20
+        Quantity: float //21
+        Weight: float //22
+        Date: string //33
+        WH: string //38
+        Status: string
+
+    }
+
 type allocation = 
     {
         Invoice: string //7
@@ -121,24 +140,7 @@ type zones =
 
     }
 
-type ComparedShipments = 
-    {
-        ShipKey: string //1
-        Customer: string //9
-        City: string //13
-        State: string //14
-        Country: string //
-        ShipToLat: float //17
-        ShipToLong: float //18
-        Distance: float  //19
-        ItemNumber: string //20
-        Quantity: float //21
-        Weight: float //22
-        Date: string //33
-        WH: string //38
-        Status: string
 
-    }
 
 
 
@@ -222,17 +224,17 @@ printfn $"Number of US shipments: {Seq.length shipdata}"
 printfn $"Number of US zones: {Seq.length zonedata}"
 printfn $"Number of allocations: {Seq.length allocdata}"
 
-// shipdata
-// |> Seq.take 5
-// |> Seq.iter (fun item ->
-//     printfn  "ShipKey: %s, City: %s, State: %s, Country: %s, WH: %s" item.ShipKey item.City item.State item.Country item.WH
-// )
+shipdata
+|> Seq.take 5
+|> Seq.iter (fun item ->
+    printfn  "ShipKey: %s, City: %s, State: %s, Country: %s, WH: %s" item.ShipKey item.City item.State item.Country item.WH
+)
 
-// zonedata
-// |> Seq.take 5
-// |> Seq.iter (fun item ->
-//     printfn  "State: %s, Abbr: %s, Reno: %s, Memphis: %s, Orangeburg: %s" item.State item.Abbr item.Reno item.Memphis item.Orangeburg
-// )
+zonedata
+|> Seq.take 5
+|> Seq.iter (fun item ->
+    printfn  "State: %s, Abbr: %s, Reno: %s, Memphis: %s, Orangeburg: %s" item.State item.Abbr item.Reno item.Memphis item.Orangeburg
+)
 
 // allocdata
 // |> Seq.take 3
@@ -311,81 +313,81 @@ let processShipments (zones: seq<zones>) (shipments: seq<shipments>) =
             Status = classifyShipment zones s 
         })
 
-let comparisons =  processShipments zonedata shipdata//|> Seq.take 50000
+let comparisons =  processShipments zonedata shipdata|> Seq.take 5
 
-// comparisons
+comparisons
 // |> Seq.filter (fun x ->
 //     x.Status <> "In Zone" && x.Status <> "Out of zone" && x.Status <> "Neutral" )
-// |> Seq.iter (fun x -> 
-//     printfn "Shipkey: %s, State: %s, WH: %s, Status: %s" x.ShipKey x.State x.WH x.Status
-//     ) 
+|> Seq.iter (fun x -> 
+    printfn "Shipkey: %s, State: %s, WH: %s, Status: %s" x.ShipKey x.State x.WH x.Status
+    ) 
 
 //saveToCsv<ComparedShipments> (Path.Combine(inputFolderPath, "Shipping_Zones_Comparison_Test.csv")) comparisons
 
-let classifyAllcoation (zones: seq<zones>) (allocs: allocation) =
+// let classifyAllcoation (zones: seq<zones>) (allocs: allocation) =
     
-    let zoneMatch = 
-            zones 
-            |> Seq.tryFind (fun z -> 
-                z.Abbr.Trim().ToUpper()  = allocs.DestState.Trim().ToUpper()   )
+//     let zoneMatch = 
+//             zones 
+//             |> Seq.tryFind (fun z -> 
+//                 z.Abbr.Trim().ToUpper()  = allocs.DestState.Trim().ToUpper()   )
 
-    //memphis
-    if allocs.BillTo = "MEM" then
+//     //memphis
+//     if allocs.BillTo = "MEM" then
         
-        match zoneMatch with
-        | Some zone ->
-            match zone.Memphis with
-            | "Yes" -> "In Zone"
-            | "Neutral" -> "Neutral"
-            | "No" -> "Out of zone"
-            | _ -> "Unknown zone status"
-        | None -> "No matches made"
-    //ogb
-    elif allocs.BillTo = "OGBD" then
+//         match zoneMatch with
+//         | Some zone ->
+//             match zone.Memphis with
+//             | "Yes" -> "In Zone"
+//             | "Neutral" -> "Neutral"
+//             | "No" -> "Out of zone"
+//             | _ -> "Unknown zone status"
+//         | None -> "No matches made"
+//     //ogb
+//     elif allocs.BillTo = "OGBD" then
         
-        match zoneMatch with
-        | Some zone ->
-            match zone.Orangeburg with
-            | "Yes" -> "In Zone"
-            | "Neutral" -> "Neutral"
-            | "No" -> "Out of zone"
-            | _ -> "Unknown zone status"
-        | None -> "No matches made"
-    //reno
-    elif allocs.BillTo = "RNO" then
+//         match zoneMatch with
+//         | Some zone ->
+//             match zone.Orangeburg with
+//             | "Yes" -> "In Zone"
+//             | "Neutral" -> "Neutral"
+//             | "No" -> "Out of zone"
+//             | _ -> "Unknown zone status"
+//         | None -> "No matches made"
+//     //reno
+//     elif allocs.BillTo = "RNO" then
         
-        match zoneMatch with
-        | Some zone ->
-            match zone.Reno with
-            | "Yes" -> "In Zone"
-            | "Neutral" -> "Neutral"
-            | "No" -> "Out of zone"
-            | _ -> "Unknown zone status"
-        | None -> "No matches made"
+//         match zoneMatch with
+//         | Some zone ->
+//             match zone.Reno with
+//             | "Yes" -> "In Zone"
+//             | "Neutral" -> "Neutral"
+//             | "No" -> "Out of zone"
+//             | _ -> "Unknown zone status"
+//         | None -> "No matches made"
 
-    else
-        "Nada"
+//     else
+//         "Nada"
 
-let processAllocation (zones: seq<zones>) (alls: seq<allocation>) =
-    alls
-    |> Seq.map (fun a -> 
-        { 
+// let processAllocation (zones: seq<zones>) (alls: seq<allocation>) =
+//     alls
+//     |> Seq.map (fun a -> 
+//         { 
             
-            Invoice = a.Invoice
-            BillTo= a.BillTo
-            OriginCity= a.OriginCity
-            OriginState= a.OriginState
-            DestCity= a.DestCity
-            DestState= a.DestState
-            FreightType= a.FreightType
-            Miles= a.Miles
-            PayAmount= a.PayAmount
-            Weight= a.Weight
-            Customer = a.Customer
-            Status = classifyAllcoation zones a
-        })
+//             Invoice = a.Invoice
+//             BillTo= a.BillTo
+//             OriginCity= a.OriginCity
+//             OriginState= a.OriginState
+//             DestCity= a.DestCity
+//             DestState= a.DestState
+//             FreightType= a.FreightType
+//             Miles= a.Miles
+//             PayAmount= a.PayAmount
+//             Weight= a.Weight
+//             Customer = a.Customer
+//             Status = classifyAllcoation zones a
+//         })
 
-let Alloccomparisons =  processAllocation zonedata allocdata//|> Seq.take 500
+// let Alloccomparisons =  processAllocation zonedata allocdata//|> Seq.take 500
 
 // Alloccomparisons
 // |> Seq.filter (fun x ->

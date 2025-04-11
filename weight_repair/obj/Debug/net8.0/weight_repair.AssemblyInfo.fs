@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("weight_repair")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+325f33f6d813a76f38776acbe6abc2ba4ff93836")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eab17b630962f63fae74c2f689fab279d799af21")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("weight_repair")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("weight_repair")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

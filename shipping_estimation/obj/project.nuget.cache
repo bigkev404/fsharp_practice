@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "v7sUmm+qsUs=",
+  "success": true,
+  "projectFilePath": "C:\\GitHub\\fsharp_practice\\shipping_estimation\\shipping_estimation.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\fsharp.core\\8.0.403\\fsharp.core.8.0.403.nupkg.sha512"
+  ],
+  "logs": []
+}
