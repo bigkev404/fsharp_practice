@@ -2,10 +2,15 @@
 open System.IO
 
 
-let inputFolderPath = "C:\Users\kevin\Downloads\model\Model Run Prep\Minirunthree"
-let shipmentpath = "C:\Users\kevin\Downloads\model\Model Run Prep\Minirunthree\SalesDataStitched2024_6.txt"
-let zonespath = "C:\Users\kevin\Downloads\model\Model Run Prep\Minirunthree\DC Zones.csv"
-let allocationpath = "C:\Users\kevin\Downloads\model\Model Run Prep\Minirunthree\24AllocationRnoMemOrg.csv"
+
+let inputFolderPath = Path.Combine(__SOURCE_DIRECTORY__, "InputData") |> DirectoryInfo 
+
+let shipmentpath  = 
+    Path.Combine(inputFolderPath.FullName, "SalesDataStitched2024_6.txt")
+    |> FileInfo
+let zonespath  = Path.Combine(inputFolderPath.FullName, "DC Zones.csv") |> FileInfo
+let allocationpath = Path.Combine(inputFolderPath.FullName, "24AllocationRnoMemOrg.csv") |> FileInfo
+
 
 let readLines (filePath:string) = seq {
     use sr = new StreamReader (filePath)
@@ -215,10 +220,10 @@ let ProcessAllocationData (filepath: string) =
 
         } )
 
-let shipdata = ProcessShipmentdata shipmentpath
-let zonedata = ProcessZonesdata zonespath 
+let shipdata = ProcessShipmentdata shipmentpath.FullName
+let zonedata = ProcessZonesdata zonespath.FullName 
 
-let allocdata = ProcessAllocationData allocationpath
+let allocdata = ProcessAllocationData allocationpath.FullName
 
 printfn $"Number of US shipments: {Seq.length shipdata}"
 printfn $"Number of US zones: {Seq.length zonedata}"
@@ -321,6 +326,8 @@ comparisons
 |> Seq.iter (fun x -> 
     printfn "Shipkey: %s, State: %s, WH: %s, Status: %s" x.ShipKey x.State x.WH x.Status
     ) 
+
+
 
 //saveToCsv<ComparedShipments> (Path.Combine(inputFolderPath, "Shipping_Zones_Comparison_Test.csv")) comparisons
 

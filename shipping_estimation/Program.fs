@@ -10,10 +10,6 @@ let readLines (filePath:string) = seq {
     while not sr.EndOfStream do
         yield sr.ReadLine () }
 
-let splitAtTabs (text: string) =
-    text.Split '\t'
-    |> Array.toList
-
 let splitAtCommas (text: string) =
     text.Split ','
     |> Array.toList
@@ -270,4 +266,5 @@ allcoationUpdate
     printfn " %s ->  %s  (%s)... Weight: %f Distance: %f  Cost: %f, NewCost: %f (Invoice: %s)" item.BillTo item.DestState item.FreightMode item.Weight item.Miles item.PayAmount item.UpdatedCost item.InvoiceID 
 )
 
-saveToCsv<UpdatedAllocation> ("C:\Users\kevin\Downloads\Allocation2024Updated.csv") allcoationUpdate
+
+//saveToCsv<UpdatedAllocation> ("C:\Users\kevin\Downloads\Allocation2024Updated.csv") allcoationUpdate

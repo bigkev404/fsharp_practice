@@ -1,0 +1,52 @@
+State,StateAb,RNO,MEM,OGBD
+Alabama,AL,No,Yes,Yes
+Alaska,AK,Yes,No,No
+Arizona,AZ,Yes,No,No
+Arkansas,AR,No,Yes,No
+California,CA,Yes,No,No
+Colorado,CO,Neutral,Yes,No
+Connecticut,CT,No,Yes,No
+Delaware,DE,No,Yes,No
+District of Columbia,DC,No,Yes,Neutral
+Florida,FL,No,Yes,Yes
+Georgia,GA,No,Yes,Yes
+Hawaii,HI,Yes,No,No
+Idaho,ID,Yes,No,No
+Illinois,IL,No,Yes,Neutral
+Indiana,IN,No,Yes,Neutral
+Iowa,IA,No,Yes,No
+Kansas,KS,No,Yes,No
+Kentucky,KY,No,Yes,Yes
+Louisiana,LA,No,Yes,Neutral
+Maine,ME,No,Yes,No
+Maryland,MD,No,Yes,No
+Massachusetts,MA,No,Yes,No
+Michigan,MI,No,Yes,No
+Minnesota,MN,No,Yes,No
+Mississippi,MS,No,Yes,Yes
+Missouri,MO,No,Yes,No
+Montana,MT,Yes,No,No
+Nebraska,NE,Neutral,Yes,No
+Nevada,NV,Yes,No,No
+New Hampshire,NH,No,Yes,No
+New Jersey,NJ,No,Yes,No
+New Mexico,NM,Neutral,Yes,No
+New York,NY,No,Yes,No
+North Carolina,NC,No,Yes,Yes
+North Dakota,ND,Neutral,Yes,No
+Ohio,OH,No,Yes,No
+Oklahoma,OK,No,Yes,No
+Oregon,OR,Yes,No,No
+Pennsylvania,PA,No,Yes,No
+Rhode Island,RI,No,Yes,No
+South Carolina,SC,No,Yes,Yes
+South Dakota,SD,Neutral,Yes,No
+Tennessee,TN,No,Yes,Yes
+Texas,TX,Neutral,Yes,No
+Utah,UT,Yes,No,No
+Vermont,VT,No,Yes,No
+Virginia,VA,No,Yes,Yes
+Washington,WA,Yes,No,No
+West Virginia,WV,No,Yes,Yes
+Wisconsin,WI,No,Yes,No
+Wyoming,WY,Yes,No,No
